@@ -55,7 +55,7 @@ ROOT_URLCONF = 'webpage_lenguage_learning.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/emman/Documents/Aprendizaje_Adicionales/ProyectosDjango/language-learning/webpage_lenguage_learning'],
+        'DIRS': ['C:/Users/emman/Documents/Aprendizaje_Adicionales/ProyectosDjango/language-learning/webpage_lenguage_learning/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
