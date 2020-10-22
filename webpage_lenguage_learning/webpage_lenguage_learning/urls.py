@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from flashcards.views import flash_cards
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('flashcards/', flash_cards),
 ]
