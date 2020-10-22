@@ -1,7 +1,33 @@
+<head>
+    <style>
+    
+        ul{
+            background-color: cadetblue;
+            border: black 4px solid;
+            list-style: none;
+            height: 5%;
+            text-align: center;
+          
+        }
+        li{  
+            box-shadow: black;
+            display: inline;
+            padding: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        li:hover{
+            background-color: royalblue;
+        }
+    </style>
+</head>
 <body>
     
     <ul>
         <li>Practicar audio</li>
-
+        <li><a href="{% url 'nav' %}">flashcards</a></li>
+        <li>agregar flashcards y audios</li>
+        <li>ajustes</li>
+        <li>salir</li>
     </ul>
 </body>
