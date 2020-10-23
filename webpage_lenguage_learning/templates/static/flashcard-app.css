@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+    background-color: cornflowerblue;
+    align-content: center;
+}
+#anverso,#reverso{
+    margin-top: 5%;
+    background-color: bisque;
+    border: black 4px solid;
+    border-radius: 4px;
+    height: 10%;
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    margin: auto;
+    font-size: 20px;
+}
+#reverso{
+    color:bisque;
+}
+#resultado{
+    border: black 1px;
+    border-style: outset;
+    background-color: white;
+    width: 10%;
+
+}

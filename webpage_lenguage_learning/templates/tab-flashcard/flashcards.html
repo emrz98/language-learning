@@ -1,40 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'flashcard-app.css' %}" >
+    <script src="{% static 'eventos-app.js' %}"></script>
     <title>Flashcards</title>
-    <style>
-       
-        body{
-            text-align: center;
-            background-color: cornflowerblue;
-        }
-        #anverso,#reverso{
-            margin-top: 5%;
-            background-color: bisque;
-            border: black 4px solid;
-            border-radius: 4px;
-            height: 10%;
-            width: 20%;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #reverso{
-            color: bisque;
-        }
-    </style>
+
 </head>
 <body>
-    <script type="text/javascript">
-    function oprimir(){
-        anverso = document.getElementById("anverso")
-        reverso = document.getElementById("reverso")
-        if ()
-        document.getElementById("reverso").style.color = '#000000';
-    }
-    </script>
     {%include "nav-bar.html"%}
     <h2>Practica con tus flashcards</h2>
     
@@ -44,13 +19,22 @@
         </div>
         <h4>Escribe tu Respuesta</h4>
         <div id="respuesta">
-            <input type="text">
-            <input type="button" id="boton_revisar" onclick="oprimir()">Respuesta</button>
+            
+               <input id="texto" type="text">
+                <button id="button" onclick="oprimir()">Respuesta</button>
+               <p id="resultado">Contesta</p>
+    
+            
         </div>
-        <h4>Reverso</h4>
+        <h3>Reverso</h3>
         <div id="reverso">
             <p>{{flash.anverse}}</p>
         </div>
-    
+        {% comment%}
+        <form action="{% url  'flashcards'%}">
+            <input type="submit"  value = "Siguiente">
+        </form>
+        {% endcomment%}
+                
 </body>
 </html>
