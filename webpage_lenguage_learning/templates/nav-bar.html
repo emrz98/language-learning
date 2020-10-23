@@ -1,33 +1,16 @@
+{%load static%}
 <head>
-    <style>
-    
-        ul{
-            background-color: cadetblue;
-            border: black 4px solid;
-            list-style: none;
-            height: 5%;
-            text-align: center;
-          
-        }
-        li{  
-            box-shadow: black;
-            display: inline;
-            padding: 10px;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        li:hover{
-            background-color: royalblue;
-        }
-    </style>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'design-nav-bar.css' %}">
 </head>
 <body>
     
     <ul>
         <li>Practicar audio</li>
-        <li><a href="{% url 'nav' %}">flashcards</a></li>
-        <li>agregar flashcards y audios</li>
-        <li>ajustes</li>
-        <li>salir</li>
+        <li><a href="{% url 'nav' %}">Flashcards</a></li>
+
+        <li>Agregar flashcards y audios</li>
+        <li>Ajustes</li>
+        <li>Salir</li>
     </ul>
 </body>

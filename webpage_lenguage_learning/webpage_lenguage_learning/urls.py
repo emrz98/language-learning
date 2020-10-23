@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from flashcards.views import flash_cards, prueba_nav
 from django.conf.urls import url,include
+from django.conf.urls.static import static
+from webpage_lenguage_learning import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('flashcards/', flash_cards),
     path('nav/', prueba_nav),
 ]
-urlpatterns+= [url(r'^flashcards/', include('flashcards.urls')),]
+urlpatterns += [url(r'^flashcards/', include('flashcards.urls')),]
+urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

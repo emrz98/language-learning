@@ -1,0 +1,21 @@
+
+ul{
+    background-color: cadetblue;
+    border: blue 4px solid;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    height: 5%;
+    text-align: center;
+  
+}
+li{  
+    box-shadow: black;
+    display: inline;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+li:hover{
+    background-color: royalblue;
+}
