@@ -1,9 +1,19 @@
 from django.shortcuts import render
 from flashcards.models import FlashCard
+import json
 
-def flash_cards(request,id = 0):
+def flash_cards(request):
     flash = FlashCard.objects.all()
-    context = {'flash':flash[0]}
+    #CARDS CON LISTAS 
+    # cards = [[card.anverse, card.reverse] for card in flash]
+    # cards = json.dumps(cards)
+
+    #CARDS CON DIC
+    cards = {"anverso": [card.anverse for card in flash] , "reverso" : [card.reverse for card in flash]}
+    cards = json.dumps(cards)
+    print(cards)
+    context = {'flash':cards}
+
     return render(request,"tab-flashcard/flashcards.html",context)
 
 def audio_practice(request):

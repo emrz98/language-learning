@@ -1,13 +1,14 @@
 {% load static %}
+<script src="{% static 'jquery.js' %}"></script>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'flashcard-app.css' %}" >
-    <script src="{% static 'eventos-app.js' %}"></script>
+    <script src="{% static 'eventos-app.js' %}"></script> 
     <title>Flashcards</title>
-
+   
 </head>
 <body>
     {%include "nav-bar.html"%}
@@ -15,26 +16,38 @@
     
         <h3>Anverso</h3>
         <div id="anverso">
-            <p>{{flash.reverse}}</p>
+            <p>Anverso</p>
         </div>
         <h4>Escribe tu Respuesta</h4>
         <div id="respuesta">
-            
                <input id="texto" type="text">
                 <button id="button" onclick="oprimir()">Respuesta</button>
                <p id="resultado">Contesta</p>
-    
-            
         </div>
         <h3>Reverso</h3>
         <div id="reverso">
-            <p>{{flash.anverse}}</p>
+            <p>Reverso</p>
         </div>
-        {% comment%}
-        <form action="{% url  'flashcards'%}">
-            <input type="submit"  value = "Siguiente">
-        </form>
-        {% endcomment%}
+        <button id="next">next</button>
+
+        <script>
+            var cards = JSON.parse("{{flash|escapejs}}");
+            var number_cards = Object.keys(cards).length;
+            var actual_card = 0;
+            $("#next").click(function(){
+            if (actual_card<number_cards){
+                id_anverso = document.getElementById("anverso"); 
+                id_anverso.innerText = cards["anverso"][actual_card];
+                id_reverso = document.getElementById("reverso"); 
+                id_reverso.innerText = cards["reverso"][actual_card];
                 
+                actual_card ++;
+                } 
+            else{
+                alert("acabaste");
+            }
+            });
+        </script>
+       
 </body>
 </html>
